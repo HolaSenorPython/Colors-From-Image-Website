@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Color Results!</title>
+    <!--GET BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--GET LOGOS FROM FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--GET MY CUSTOM CSS-->
+    <link rel="stylesheet" href="static/css/custom.css">
+</head>
+<body data-bs-theme="dark">
+<!--Hero section at top-->
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+  <h1 class="display-4 fw-bold text-body-emphasis"><u>Your colors are ready!</u></h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4 text-white">Scroll down the <b>PAGE</b> to see the most common colors
+    we found in your image.<br>Scroll in the little image area to see your image.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <a class="btn btn-purple btn-lg" href="{{ url_for('home') }}">Return Home🛖</a>
+      <a class="btn btn-cardinal-red btn-lg" href="{{ url_for('img_upload') }}">Do another image! 😎</a>
+    </div>
+  </div>
+  <div class="overflow-auto" style="max-height: 30vh;">
+    <div class="container px-5">
+        <img src="{{ img_path }}">
+    </div>
+  </div>
+</div>
+<!--SECTION FOR ALL THE COLORSSSS!!!!-->
+<div class="container py-5">
+    <!--FIRST row of colors-->
+    <div class="row">
+        <!--Define the color, count, and organize stuff in this row-->
+        {% for (color_tuple, number) in zipped[0:4] %} <!--For this row, only do first 4 most common colors!-->
+            {% set color = color_tuple[0] %} <!--Set color to first thing in tuple (hexcode)-->
+            {% set count = color_tuple[1] %} <!--Set count to second thing in tuple (le count lol)-->
+            <div class="col-sm-3 text-center"> <!--Each of these little divs should take 1/4, so 4 in each row-->
+                <div style="background-color: {{ color }};
+                width: 100px; height: 100px; border-radius: 8px; margin: 0 auto;"> <!--Round the div corners, and remove Y-AXIS margin-->
+                </div>
+                <p class="text-white">The number <b>#{{ number }}</b> most common color is: <b>{{ color }}</b>, with
+                <br>a count of <b>{{ count }} pixels</b>.</p>
+                <!--The above gets the CORRESPONDING number to that COLOR TUPLE, which is going to be its prevalence
+                from 1st most common to whatever the length of the list was. Basically i hardcoded numbers 1-12 to the
+                tuples in the list, and it's safe because most_common() gets them in descending order accurately.-->
+            </div>
+        {% endfor %}
+    </div>
+
+    <!--SECOND ROW of COLORS-->
+    <div class="row">
+        <!--DO EVERYTHING THE SAME, but just elements 4-8-->
+        {% for (color_tuple, number) in zipped[4:8] %} <!--For this row, get colors 4-8-->
+            {% set color = color_tuple[0] %}
+            {% set count = color_tuple[1] %}
+            <div class="col-sm-3 text-center">
+                <div style="background-color: {{ color }};
+                width: 100px; height: 100px; border-radius: 8px; margin: 0 auto;">
+                </div>
+                <p class="text-white">The number <b>#{{ number }}</b> most common color is: <b>{{ color }}</b>, with
+                <br>a count of <b>{{ count }} pixels</b>.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!--FINAL ROW of COLORS-->
+    <div class="row">
+        <!--DO EVERYTHING THE SAME, but just LAST 4 elements-->
+        {% for (color_tuple, number) in zipped[8:] %} <!--For this row, get LAST 4 elements-->
+            {% set color = color_tuple[0] %}
+            {% set count = color_tuple[1] %}
+            <div class="col-sm-3 text-center">
+                <div style="background-color: {{ color }};
+                width: 100px; height: 100px; border-radius: 8px; margin: 0 auto;">
+                </div>
+                <p class="text-white">The number <b>#{{ number }}</b> most common color is: <b>{{ color }}</b>, with
+                <br>a count of <b>{{ count }} pixels</b>.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!--Start FOOTER!-->
+<footer class="mt-auto text-center text-white py-5 bg-dark">
+    <div class="container bg-byzantium smaller-container-lol rounded-3">
+        <a href="https://github.com/HolaSenorPython" class="text-white me-3">
+            <i class="fab fa-github fa-3x mt-2"></i>   <!-- GitHub icon -->
+      </a>
+      <a href="https://www.instagram.com/elishafooty" class="text-white ms-3">
+            <i class="fab fa-instagram fa-3x mt-2"></i>    <!-- Instagram icon -->
+      </a>
+    <p class="mb-0 pt-2">My socials ⬆️⬆️<br>
+        <u>Made with ❤️ by Elisha N. Built with Bootstrap.</u></p>
+        <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-12 col-lg-5">
+                    <img src="static/assets/img/antony-spin.gif" width="150" height="150"
+                    class="rounded-5 pt-2 mb-2">
+                </div>
+                <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
+                    <p class="fw-bold mx-0 my-0 fs-1">=</p>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <img src="static/assets/img/goat-img.jpg" class="rounded-5 pt-2 mb-2"
+                         width="150" height="150">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--BOOTSTRAP SCRIPT-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>

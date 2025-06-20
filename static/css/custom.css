@@ -1,0 +1,39 @@
+/*
+ * THIS DOC WILL CONTAIN ALL MY CUSTOM CSS, STARTING WITH this CUSTOM container background
+*/
+
+.bg-byzantium {
+    background-color: #702963;
+}
+
+.smaller-container-lol {
+    width: 25%;
+}
+
+/*
+ * CUSTOM BUTTONS
+*/
+
+.btn-cardinal-red {
+    background-color: #C41E3A;
+    border: none;
+    color: white;
+}
+
+.btn-cardinal-red:hover,
+.btn-cardinal-red:focus {
+    background-color: #F88379; /* Lighter red hex code */
+    color: white;
+}
+
+.btn-purple {
+    background-color: #800080;
+    color: white;
+    border: none;
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+    background-color: #E6E6FA; /* Lavender hex code */
+    color: white;
+}
