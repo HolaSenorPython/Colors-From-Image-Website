@@ -9,7 +9,7 @@ Whether you're a curious person or an actual designer (if so im FLATTERED), this
 - 📸 Upload image files (PNG, JPG, JPEG)
 - 🎯 View the **top 12 most common colors** from the uploaded image
 - 🎨 Each color is displayed with a labeled swatch and its prevalence rank
-- 🎧 Fun audio feedback on button click
+- 🎧 Fun audio feedback on button click (home screen only)
 - ⚽ Bonus themed visuals (e.g. soccer GIFs!)
 - 🧼 Clean, responsive design with Bootstrap 5
 
