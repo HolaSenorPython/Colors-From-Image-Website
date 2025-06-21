@@ -32,3 +32,5 @@ Whether you're a curious person or an actual designer (if so im FLATTERED), this
 3. Install dependencies/requirements.txt
   - pip install -r requirements.txt
 4. run the app lol 🤣🤣
+## BEFORE RUNNING, MAKE SURE YOUR ENV VARIABLE FOR THE FLASK KEY IS SAVED UNDER "FLASK_KEY"
+- FLASK_KEY=your_key_here
