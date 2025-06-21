@@ -1,0 +1,7 @@
+Flask
+Flask-WTF
+Werkzeug
+imageio
+numpy
+Bootstrap-Flask
+python-dotenv
