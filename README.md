@@ -2,6 +2,7 @@
 
 This project is a Flask App/Website allowing you to import images and automatically grab the colors in those images. 
 Whether you're a curious person or an actual designer (if so im FLATTERED), this is for you.
+UPDATE 6/27/25: App is live at <a href='https://color-grabber.onrender.com'>this link!</a>
 
 ---
 
