@@ -32,6 +32,7 @@ def img_upload():
         image_data = form.image_file.data # Get the image (fileobj from form)
         img_name = secure_filename(image_data.filename) # Save the img name as a variable
         save_path = os.path.join(IMG_FOLDER, img_name) # Combine the IMG folder path with the img name path
+        os.makedirs(IMG_FOLDER, exist_ok=True) # Make it if it doesnt exist
         image_data.save(save_path) # Now save the image imported in the img folder
 
         # Store the image name/path in the session to be accessed later
