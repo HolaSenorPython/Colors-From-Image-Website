@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+Bootstrap-Flask
+Flask-WTF
+imageio
+numpy
+python-dotenv
+gunicorn        # production WSGI server Render expects
